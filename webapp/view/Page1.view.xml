@@ -1,0 +1,390 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.sap.build.ba293bd41-us_1.manageWorkOrder.controller.Page1"
+xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:core="sap.ui.core" xmlns:m="sap.m" xmlns:f="sap.f"
+		xmlns:fb="sap.ui.comp.filterbar" xmlns:vm="sap.ui.comp.variants" >
+	
+		<Page title="Work Order List" showHeader="true" showFooter="true"
+		showNavButton="false" navButtonPress="_onPageNavButtonPress">
+		<!--<customHeader>-->
+		<!--	<Bar>-->
+		<!--		<contentLeft>-->
+		<!--			<Button id="Dashboard" text="Back to DashBoard" press="backToOvp" icon=""/>-->
+		<!--		</contentLeft>-->
+		<!--		<contentMiddle/>-->
+		<!--		<contentLeft>-->
+		<!--			<Title text="" titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false"/>-->
+		<!--		</contentLeft>-->
+				
+				
+		<!--	</Bar>-->
+		<!--</customHeader>-->
+		
+			<customHeader>
+			<Bar>
+				<contentRight>
+					<Button id="Dashboard" text="Back to Dashboard" icon="" press="backToOvp" tooltip="Back"/>
+				</contentRight>
+				<contentMiddle></contentMiddle>
+				<contentLeft>
+					<Title text="" titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		
+		
+		<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}">
+		
+			<f:header>
+				<f:DynamicPageHeader pinnable="false" headerExpanded="false" showGoOnFB="true" clear="Clearpress1" showClearOnFB="true" showClearButton="true" showGoButton="false" wrapping="true">
+					<f:content>
+						<fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="true" clear="Clearpress"
+							visible="{oGlobalModel>/filterBarVisible}" showClearOnFB="true" showClearButton="true">
+							
+							<!--<fb:FilterBar id="filterbar" reset="onReset" search="onGopress" cancel="onCancel" clear="Clearpress" useToolbar="false" showGoOnFB="true"-->
+							<!--showClearOnFB="true" showRestoreOnFB="false" showClearButton="true" showRestoreButton="true">-->
+							
+							
+							
+							<fb:filterItems>
+								<fb:FilterItem name="r" label="Plant">
+									<fb:control>
+										<ComboBox placeholder="Select Plant" id="filplant" value="" editable="true" change="filplanChange" enabled="true" visible="true"
+											width="auto" valueState="None" maxWidth="100%" required="true"/>
+									</fb:control>
+								</fb:FilterItem>
+								<fb:FilterItem name="e" label="Technical Object">
+									<fb:control>
+										<Input id="inpfloc" placeholder="Technical Object" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto"
+											valueHelpOnly="true" required="false" valueStateText="Invalid entry" maxLength="0" valueHelpRequest="techobj"/>
+									</fb:control>
+								</fb:FilterItem>
+								<fb:FilterItem name="q" label="Main Work Center">
+									<fb:control>
+										<!--<Select-->
+										<!--id="podocument3"-->
+										<!--change="onSelectChange"-->
+										<!--forceSelection="true"-->
+										<!--items="">-->
+										<!--<core:Item key="" text=""/>-->
+										<!--</Select>-->
+										<ComboBox placeholder="Select Work Center" id="filwkcent" editable="true" change="filwkcentchange" enabled="false" visible="true" width="auto"
+											valueState="None" maxWidth="100%"/>
+									</fb:control>
+								</fb:FilterItem>
+								<!--<fb:FilterItem name="w" label="Material">-->
+								<!--	<fb:control>-->
+										
+								<!--		<ComboBox placeholder="Select Material" id="filmaterial" editable="true" change="funLocChange" enabled="true" visible="true" width="auto"-->
+								<!--			valueState="None" maxWidth="100%" required="false"/>-->
+								<!--	</fb:control>-->
+								<!--</fb:FilterItem>-->
+								<fb:FilterItem name="t" label="Date Range">
+									<fb:control>
+										<DateRangeSelection id="DRS4" displayFormat="dd.MM.yyyy" valueFormat="dd.MM.yyyy"  change="handleChange" value="" enabled="false"/>
+											
+											 <!--displayFormat="yyyymmdd"-->
+									</fb:control>
+								</fb:FilterItem>
+								<fb:FilterItem name="y" label="Status">
+									<fb:control>
+									
+										<ComboBox id="filstatus" placeholder="Select Status" editable="true" enabled="false" visible="true" width="auto" change="filstat"
+											valueState="None" maxWidth="100%">
+											<items>
+												<core:Item text="Created" enabled="true" key="I0001"/>
+												<core:Item text="Released" enabled="true" key="I0002"/>
+												<core:Item text="Partially Confirmed" enabled="true" key="I0010"/>
+												<core:Item text="Confirmed" enabled="true" key="I0009"/>
+												<core:Item text="Technically Completed" enabled="true" key="I0045"/>
+												<core:Item text="Closed" enabled="true" key="I0046"/>
+											</items>
+										</ComboBox>
+									</fb:control>
+								</fb:FilterItem>
+								
+									<fb:FilterItem name="z" label="Current">
+									<fb:control>
+										
+										
+									<SegmentedButton id="segday" width="100%" visible="true" selectedButton="none" selectionChange="SegmentedChange" enabled="{ViewModel>/Segemntbutton}">
+										<items>
+											<SegmentedButtonItem  icon="" text="Day"  enabled="true" press="SegmentedDay" key="1" />
+											<SegmentedButtonItem icon="" text="Week"  enabled="true" press="Segmentedweek" key="2" />
+											<SegmentedButtonItem icon="" text="Month" enabled="true" press="Segmentedmonth" key="3" />
+											<!--<SegmentedButtonItem icon="" text="" enabled="true" press="Segmentedummy" key="0" visible="false" />-->
+										</items>
+									</SegmentedButton>
+									
+										
+							
+									</fb:control>
+								</fb:FilterItem>
+								
+								
+								<!--	<fb:FilterItem name="a1" label="">-->
+								<!--	<fb:control>-->
+										
+											<!--<Button id="ClearFilter" text="Clear Filter" type="Emphasized" press="clearfilpress" visible="true"/>-->
+								
+										
+							
+								<!--	</fb:control>-->
+								<!--</fb:FilterItem>-->
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								<!--<fb:FilterItem name="r" label="">-->
+								<!--</fb:FilterItem>-->
+							</fb:filterItems>
+	
+									
+									
+									
+													
+									<!--<Button id="ClearFilter" text="Clear Filter" type="Emphasized" press="clearfilpress" visible="true"/>-->
+										<!--<Button id="ClearFilter2" text="Clear Filter" type="Emphasized" press="clearfilpress" visible="true"/>-->
+
+						</fb:FilterBar>
+						
+						
+						
+						<Toolbar>
+							<Title id="counttable" text="Work Order(0/0)" titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+							<ToolbarSpacer width=""/>
+							<!--<Button id="Component2" text="Components" type="Emphasized" press="componentview2" visible="false"/>-->
+							
+							
+							<SearchField placeholder="Search" showSearchButton="true" liveChange="onLiveChange" visible="true" width="auto"/>
+						</Toolbar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content>
+				<!--<Toolbar>-->
+				<!--	<Title id="counttable" text="Work Order(0/0)" titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false"/>-->
+				<!--	<ToolbarSpacer width=""/>-->
+				<!--	<SearchField placeholder="Search" showSearchButton="true" liveChange="onLiveChange" visible="true" width="auto"/>-->
+				<!--</Toolbar>-->
+				<Table id="Table" width="100%" noDataText="" mode="None" showSeparators="All" growing="true" growingThreshold="50"
+					growingScrollToLoad="false" itemPress="_onTableItemPress" items="{path:'/listdata', templateShareable:true}" updateFinished="render" busy="{oGlobalModel>/deLay}" busyIndicatorDelay="0">
+					<infoToolbar>
+						<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+							<content>
+								<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</content>
+						</Toolbar>
+					</infoToolbar>
+					<headerToolbar>
+						<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+							<content>
+								<ToolbarSpacer width=""/>
+							</content>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+							<header>
+								<Text text="Work Order No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</header>
+							<footer/>
+						</Column>
+						<Column width="30%" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+							<header>
+								<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</header>
+							<footer/>
+						</Column>
+						<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+							<header>
+								<Text text="Created On" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</header>
+							<footer/>
+						</Column>
+						<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+							<header>
+								<Text text="Order Type" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</header>
+							<footer/>
+						</Column>
+						<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+							<header>
+								<Text text="System Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</header>
+							<footer/>
+						</Column>
+						<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+							visible="false">
+							<header>
+								<Text text="User Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</header>
+							<footer/>
+						</Column>
+						<Column width="auto" hAlign="Right" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+							<header>
+								<Text text="Priority" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</header>
+							<footer/>
+						</Column>
+						<Column width="auto" hAlign="Right" visible="false" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline"
+							mergeDuplicates="false">
+							<header>
+								<Text text="Order Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</header>
+							<footer/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation">
+							<cells>
+								<ObjectIdentifier id="listObjIdentWorkOrderNo" title="{WorkOrderNo}" text="" titleActive="true" visible="true"/>
+								<Text id="listTextDesc" text="{Description}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"
+									visible="true"/>
+								<Text id="listTextCreatedOn" text="{CreatedOn}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"
+									visible="true"/>
+								<Text id="listTextOrderType" text="{OrderType}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"
+									visible="true"/>
+								<!--<Text id="listTextSyStatus" text="{SystStatus}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"-->
+								<!--	visible="true"/>-->
+								<ObjectStatus id="listTextSyStatus" title="" text="{SystStatusDes}" state="{state}" visible="true"/>
+								<Text id="listTextUserStatus" text="{UserStatus}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"
+									visible="false"/>
+								<ObjectStatus id="inpPrity1" title="" text="{priority}" state="{path: 'priority', formatter: '.formatter.availableColor'}" visible="true"/>
+								<ObjectStatus id="star" title="" text="{SystStatu}"  visible="false"/>
+								<Text id="ordStatus" text="{CreatedCnt}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"
+									visible="false"/>
+								<ObjectStatus id="funclocate" title="" text="{functionallocation}"  visible="false"/>	
+								<ObjectStatus id="plant" title="" text="{Plant}"  visible="false"/>	
+									
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</f:content>
+		</f:DynamicPage>
+		<!--<content>-->
+		<!--	<Toolbar>-->
+		<!--		<Title id="counttable" text="Work Order(0/0)" titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false"/>-->
+		<!--		<ToolbarSpacer width=""/>-->
+		<!--		<SearchField placeholder="Search" showSearchButton="true" liveChange="onLiveChange" visible="true" width="auto"/>-->
+		<!--	</Toolbar>-->
+		<!--<Table id="Table" width="100%" noDataText="" mode="None" showSeparators="All" growing="true" growingThreshold="20"-->
+		<!--		growingScrollToLoad="true" itemPress="_onTableItemPress" items="{path:'/listdata', templateShareable:true}" updateFinished="render">-->
+		<!--		<infoToolbar>-->
+		<!--			<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">-->
+		<!--				<content>-->
+		<!--					<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--				</content>-->
+		<!--			</Toolbar>-->
+		<!--		</infoToolbar>-->
+		<!--		<headerToolbar>-->
+		<!--			<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">-->
+		<!--				<content>-->
+		<!--					<ToolbarSpacer width=""/>-->
+		<!--				</content>-->
+		<!--			</OverflowToolbar>-->
+		<!--		</headerToolbar>-->
+		<!--		<columns>-->
+		<!--			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">-->
+		<!--				<header>-->
+		<!--					<Text text="Work Order No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--				</header>-->
+		<!--				<footer/>-->
+		<!--			</Column>-->
+		<!--			<Column width="30%" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+		<!--				<header>-->
+		<!--					<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--				</header>-->
+		<!--				<footer/>-->
+		<!--			</Column>-->
+		<!--			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+		<!--				<header>-->
+		<!--					<Text text="Created On" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--				</header>-->
+		<!--				<footer/>-->
+		<!--			</Column>-->
+		<!--			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+		<!--				<header>-->
+		<!--					<Text text="Order Type" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--				</header>-->
+		<!--				<footer/>-->
+		<!--			</Column>-->
+		<!--			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+		<!--				<header>-->
+		<!--					<Text text="System Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--				</header>-->
+		<!--				<footer/>-->
+		<!--			</Column>-->
+		<!--			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"-->
+		<!--				visible="false">-->
+		<!--				<header>-->
+		<!--					<Text text="User Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--				</header>-->
+		<!--				<footer/>-->
+		<!--			</Column>-->
+		<!--			<Column width="auto" hAlign="Right" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+		<!--				<header>-->
+		<!--					<Text text="Priority" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--				</header>-->
+		<!--				<footer/>-->
+		<!--			</Column>-->
+		<!--			<Column width="auto" hAlign="Right" visible="false" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline"-->
+		<!--				mergeDuplicates="false">-->
+		<!--				<header>-->
+		<!--					<Text text="Order Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--				</header>-->
+		<!--				<footer/>-->
+		<!--			</Column>-->
+		<!--		</columns>-->
+		<!--		<items>-->
+		<!--			<ColumnListItem type="Navigation">-->
+		<!--				<cells>-->
+		<!--					<ObjectIdentifier id="listObjIdentWorkOrderNo" title="{WorkOrderNo}" text="" titleActive="false" visible="true"/>-->
+		<!--					<Text id="listTextDesc" text="{Description}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"-->
+		<!--						visible="true"/>-->
+		<!--					<Text id="listTextCreatedOn" text="{CreatedOn}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"-->
+		<!--						visible="true"/>-->
+		<!--					<Text id="listTextOrderType" text="{OrderType}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"-->
+		<!--						visible="true"/>-->
+		<!--					<Text id="listTextSyStatus" text="{SystStatus}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"-->
+		<!--						visible="true"/>-->
+		<!--					<Text id="listTextUserStatus" text="{UserStatus}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"-->
+		<!--						visible="false"/>-->
+		<!--					<ObjectStatus id="inpPrity1" title="" text="{priority}" state="{path: 'priority', formatter: '.formatter.availableColor'}" visible="true"/>-->
+		<!--					<Text id="ordStatus" text="{CreatedCnt}" width="auto" maxLines="1" wrapping="false" textAlign="Begin"-->
+		<!--						textDirection="Inherit" visible="false"/>-->
+		<!--				</cells>-->
+		<!--			</ColumnListItem>-->
+		<!--		</items>-->
+		<!--	</Table>-->
+		<!--</content>-->
+		<!--<footer/>-->
+		<!--<headerContent>-->
+		<!--	<Button text="" type="Default" icon="{= ${FclRouter>/expandIcon/img}}" iconFirst="true" width="auto" enabled="true" visible="false"-->
+		<!--		tooltip="{= ${FclRouter>/expandIcon/tooltip}}" iconDensityAware="false" class="fcl-resizeButton-js" press="_onExpandButtonPress"/>-->
+		<!--	<Button text="" type="Default" icon="sap-icon://decline" iconFirst="true" width="auto" enabled="true" visible="false" tooltip="Close Column"-->
+		<!--		iconDensityAware="false" class="fcl-closeButton-js" press="_onCloseButtonPress"/>-->
+		<!--</headerContent>-->
+		<content>
+			<!--<Button xmlns="sap.m" text="Button" id="button2"/>-->
+		</content>
+	</Page>
+</mvc:View>

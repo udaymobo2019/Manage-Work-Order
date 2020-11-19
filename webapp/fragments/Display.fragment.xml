@@ -1,0 +1,162 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.ba293bd41-us_1.manageWorkOrder.controller.Display"
+	xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	
+	<Dialog  contentHeight="70%" contentWidth="90%" horizontalScrolling="false" showHeader="true" state="None" stretch="false"
+		title="Purchasing Data" type="Standard" verticalScrolling="true">
+	<content>
+	<IconTabBar expandable="true" expanded="true" applyContentPadding="true" backgroundDesign="Translucent" upperCase="false" visible="true"
+		selectedKey="Ok">
+				<items>
+					<IconTabFilter id="purdata111" icon="sap-icon://form" iconColor="Default" text="Purchase Data" count="" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false"  key="Purchdataxx">
+						<VBox class="sapUiSmallMargin">
+							<f:Form id="FormChange480_Trial" editable="true">
+								<f:layout>
+									<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+										emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer title="">
+										<f:formElements>
+											<f:FormElement label=""></f:FormElement>
+											<f:FormElement label="Requirement Qty">
+												<f:fields>
+													<Input id="val0" value="" liveChange="globalqty" editable="false"/>
+													<Input id="val1" value="" editable="false"> 
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Price">
+												<f:fields>
+													<Input id ="Price" value="" editable="false"/>
+													<ComboBox id="combo15" editable="false" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Material Group">
+												<f:fields>
+													<ComboBox id="combo8" editable="false" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Purchase Group">
+												<f:fields>
+													<ComboBox id="combo9" editable="false" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+													<Input id="val3" value="" editable="false">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+										
+											<f:FormElement label="Goods Recipient">
+												<f:fields>
+													<Input id="Nongoodsrece" value="" editable="false"/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Requisitioner">
+												<f:fields>
+													<Input id="NonRequi" value="" editable="false"/>
+												</f:fields>
+											</f:FormElement>
+									
+											<f:FormElement label="Purchase Req.">
+												<f:fields>
+													<Input id="Prnum3" value="" editable="false"/>
+													<Input id="PRitemNo" value="" editable="false">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+									<f:FormContainer title="">
+										<f:formElements>
+											<f:FormElement label="G/L Account">
+												<f:fields>
+													<ComboBox id="combo16" editable="false" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="per">
+												<Input id="val4" value="" editable="false"/>
+												<Input id="perunit" value="" editable="false">
+													<layoutData>
+														<l:GridData span="XL2 L2 M2 S4"/>
+													</layoutData>
+												</Input>
+											</f:FormElement>
+											
+											<f:FormElement label="Vendor">
+												<f:fields>
+													<ComboBox id="combo10" editable="false" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Info Record">
+												<f:fields>
+												
+													<ComboBox id="combo14" editable="false" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items>
+															
+														</items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+										
+											<f:FormElement label="Tracking Number">
+												<f:fields>
+													<Input id="trackNo" value="" editable="false"/>
+												</f:fields>
+											</f:FormElement>
+											
+											<f:FormElement label="Received">
+												<f:fields>
+													<Input value="" editable="false"/>
+													<Input value="" editable="false">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+											
+											<f:FormElement label="" >
+											<f:fields>
+												<CheckBox id="check1" text="PO Exists" selected="false" editable="false"/>
+												</f:fields>	
+											</f:FormElement>
+	
+											
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+						</VBox>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="Ok" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="DisplayOK"/>
+			<!--<Button text="Cancel" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="Cancel"/>-->
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

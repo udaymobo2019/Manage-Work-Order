@@ -1,0 +1,1285 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns:f="sap.f" xmlns:u="sap.ui.unified" controllerName="com.sap.build.ba293bd41-us_1.manageWorkOrder.controller.Page2_1">
+	<uxap:ObjectPageLayout showTitleInHeaderContent="true" showHeaderContent="true" showAnchorBar="true" showFooter="true"
+		subSectionLayout="TitleOnTop">
+		<uxap:headerContent/>
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader id="objPageH" objectImageURI="sap-icon://eam-work-order" objectTitle="{Order}" objectSubtitle="{Desc}"
+				headerDesign="Light" objectImageShape="Circle" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false"
+				isObjectSubtitleAlwaysVisible="false" isActionAreaAlwaysVisible="true">
+				<uxap:actions/>
+				<uxap:breadCrumbsLinks/>
+				<uxap:navigationBar>
+					<Bar design="Auto">
+						<contentLeft/>
+						<contentMiddle/>
+						<contentRight>
+							<!--<Button text="" type="Default" icon="{= ${FclRouter>/expandIcon/img}}" iconFirst="true" width="auto" enabled="true" visible="{= ${fclButton>/visible}}" tooltip="{= ${FclRouter>/expandIcon/tooltip}}" iconDensityAware="false" class="fcl-resizeButton-js" press="_onExpandButtonPress"/>-->
+							<Button text="" type="Default" icon="sap-icon://decline" iconFirst="true" width="auto" enabled="true" visible="{= ${fclButton>/visible}}"
+								tooltip="Close Column" iconDensityAware="false" class="fcl-closeButton-js" press="_onCloseButtonPress"/>
+						</contentRight>
+					</Bar>
+				</uxap:navigationBar>
+			</uxap:ObjectPageHeader>
+		</uxap:headerTitle>
+		<uxap:sections>
+			<uxap:ObjectPageSection showTitle="true" title="" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="System Status" mode="Expanded">
+						<uxap:blocks>
+							<form:Form width="100%" editable="true" visible="true">
+								<!--<form:title>-->
+								<!--	<core:Title text="Status" level="Auto"/>-->
+								<!--</form:title>-->
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceAround" renderType="Div"
+													visible="true" displayInline="false">
+													<items>
+														<VBox alignItems="Center" width="10%" justifyContent="Center">
+															<items>
+																<f:Avatar id="Av1" src="sap-icon://open-command-field" displaySize="S" backgroundColor="Accent6"></f:Avatar>
+																<Text text="Created"/>
+															</items>
+														</VBox>
+														<VBox alignItems="Center" width="10%" justifyContent="Center">
+															<items>
+																<f:Avatar id="Av2" src="sap-icon://open-command-field" displaySize="S" backgroundColor=""></f:Avatar>
+																<Text text="Released"/>
+															</items>
+														</VBox>
+														<VBox alignItems="Center" width="10%" justifyContent="Center">
+															<items>
+																<f:Avatar id="Av3" src="sap-icon://open-command-field" displaySize="S" backgroundColor=""></f:Avatar>
+																<Text text="Par.Conf."/>
+																<!--<Text text="Partially Confirmed"/>-->
+															</items>
+														</VBox>
+														<VBox alignItems="Center" width="10%" justifyContent="Center">
+															<items>
+																<f:Avatar id="Av4" src="sap-icon://open-command-field" displaySize="S" backgroundColor=""></f:Avatar>
+																<Text text="Confirmed"/>
+															</items>
+														</VBox>
+														<VBox alignItems="Center" width="10%" justifyContent="Center">
+															<items>
+																<f:Avatar id="Av5" src="sap-icon://open-command-field" displaySize="S" backgroundColor=""></f:Avatar>
+																<Text text="TECO"/>
+																<!--<Text text="Technically Completed"/>-->
+															</items>
+														</VBox>
+														<VBox alignItems="Center" width="10%" justifyContent="Center">
+															<items>
+																<f:Avatar id="Av6" src="sap-icon://open-command-field" displaySize="S" backgroundColor=""></f:Avatar>
+																<Text text="Closed"/>
+															</items>
+														</VBox>
+													</items>
+												</HBox>
+											</form:FormElement>
+											<form:FormElement>
+												<ProgressIndicator id="pind" width="100%" percentValue="" showValue="true" displayValue="" state="None" enabled="true" visible="true"/>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="General Data" mode="Expanded">
+						<uxap:blocks>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title>
+									<core:Title text="Reference Object" level="Auto"/>
+								</form:title>
+								<form:formContainers>
+									<form:FormContainer id="BIND1" visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Functional Location" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<HBox>
+														<!--<ComboBox placeholder="Select Functional location" id="functechBind1" editable="true" change="tech_change" enabled="true" visible="true"-->
+														<!--	width="auto" valueState="None" maxWidth="100%"></ComboBox>-->
+														<Input id="functechBind1" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="18rem" valueHelpOnly="true"
+															maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+														<Button text="Details" type="Emphasized" press="functionalDetails" icon="" iconFirst="true" width="auto" enabled="true" visible="true"/>
+													</HBox>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Equipment" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<HBox>
+														<Input id="equipBind1" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="18rem" valueHelpOnly="true"
+															maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+														<!--<ComboBox placeholder="Select Equipment" id="equipBind1" editable="true" change="tech_change1" enabled="true" visible="true" width="auto"-->
+														<!--	valueState="None" maxWidth="100%"></ComboBox>-->
+														<Button text="Details" type="Emphasized" press="equipmentDetails" icon="" iconFirst="true" width="auto" enabled="true" visible="true"/>
+													</HBox>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+									<form:FormContainer id="WITHOUTBIND1" visible="false">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Functional Location" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox placeholder="Select Functional location" id="functech" editable="true" change="funLocChange" enabled="true" visible="true"
+														width="auto" valueState="None" maxWidth="100%"/>
+													<ToggleButton pressed="true" text="" press="functionalDetails" icon="sap-icon://functional-location" iconFirst="true" width="10%"
+														enabled="true" visible="false"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Equipment" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox placeholder="Select Equipment" id="equip" editable="true" change="equipmentChange" enabled="true" visible="true" width="auto"
+														valueState="None" maxWidth="100%"/>
+													<ToggleButton pressed="true" text="" press="equipmentDetails" icon="sap-icon://add-equipment" iconFirst="true" width="10%" enabled="true"
+														visible="false"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+							<form:Form editable="true" visible="true">
+								<form:title>
+									<core:Title text="Subject" level="Auto"/>
+								</form:title>
+								<form:formContainers>
+									<form:FormContainer id="BIND2" visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Short Description" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<TextArea id="textAreaBind2" value="" rows="1" cols="20" maxLength="0" wrapping="None" editable="false" required="false"
+														valueStateText="Invalid entry" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Long Text" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<TextArea id="lngTextBind2" value="" rows="5" cols="20" maxLength="0" wrapping="None" editable="false" required="false"
+														valueStateText="Invalid entry" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+									<form:FormContainer id="WITHOUTBIND2" visible="false">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Short Description" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<!--<TextArea id="textArea" value="" liveChange="shortDesLC" rows="1" cols="20" maxLength="0" wrapping="None" editable="true" required="false"
+														valueStateText="Invalid entry" visible="true"/>-->
+													<Input id="textArea" value="" type="Text" liveChange="shortDesLC" showValueHelp="false" editable="true" visible="true" valueHelpOnly="false"
+														required="false" valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Long Text" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<TextArea id="lngText" value="" rows="5" liveChange="lngTextLC" cols="20" maxLength="0" wrapping="None" editable="true" required="false"
+														valueStateText="Invalid entry" visible="true"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title>
+									<core:Title text="Responsibilites" level="Auto"/>
+								</form:title>
+								<form:formContainers>
+									<form:FormContainer id="BIND3" visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Planner Group" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="plnGrpBind3" value="" type="Text" showValueHelp="false" editable="false" visible="true" valueHelpOnly="false" required="false"
+														valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Main Work Center" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="mWrkctrBind3" value="" type="Text" showValueHelp="false" editable="false" visible="true" valueHelpOnly="false" required="false"
+														valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="PMAct Type" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="pmActypeBind3" value="" type="Text" showValueHelp="false" editable="false" visible="true" valueHelpOnly="false" required="false"
+														valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+									<form:FormContainer id="WITHOUTBIND3" visible="false">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Planner Group" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox id="plnGrp" placeholder="Select Planner group" editable="true" enabled="true" visible="true" width="100%" change="planGrpChan"
+														valueState="None" maxWidth="100%"/>
+													<!--<Input id="plnGrp" value="" type="Text" showValueHelp="false" editable="true" visible="true" valueHelpOnly="false"-->
+													<!--	required="false" valueStateText="Invalid entry" maxLength="0"/>-->
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Main Work Center" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox id="mWrkctr" placeholder="Select Work center" editable="true" enabled="true" visible="true" width="100%" change="workCentChange"
+														valueState="None" maxWidth="100%"/>
+													<!--<Input id="mWrkctr" value="{MWCenter}" type="Text" showValueHelp="false" editable="true" visible="true" valueHelpOnly="false"
+														required="false" valueStateText="Invalid entry" maxLength="0"/>-->
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="PMAct Type" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<!--<Input id="pmActype" value="" type="Text" showValueHelp="false" editable="true" visible="true" valueHelpOnly="false"
+														required="false" valueStateText="Invalid entry" maxLength="3"/>-->
+													<Input id="pmActype" value="" liveChange="pmActLC" showValueHelp="false" editable="true" visible="true" valueHelpOnly="false"
+														required="false" valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+							<form:Form editable="true" visible="true">
+								<form:title>
+									<core:Title text="Start / End Date" level="Auto"/>
+								</form:title>
+								<form:formContainers>
+									<form:FormContainer id="BIND4" visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Priority" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="priorityBind4" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="auto" valueHelpOnly="true"
+														maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Basic Start Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="startDateBind4" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="auto" valueHelpOnly="true"
+														maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+													<!--<DateTimePicker id="startDateBind4" placeholder="Start Date/Time" width="auto" displayFormat="short" required="false"-->
+													<!--	valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMddTHHmmss"/>-->
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Basic End Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="finishDateBind4" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="auto" valueHelpOnly="true"
+														maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+													<!--<DateTimePicker id="finishDateBind4" placeholder="End Date/Time" width="auto" displayFormat="short" required="false"-->
+													<!--	valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMddHHmmss"/>-->
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+									<form:FormContainer id="WITHOUTBIND4" visible="false">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Priority" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox id="priority" placeholder="Select Priority" editable="true" enabled="true" visible="true" width="100%" change="priorityChange"
+														valueState="None" maxWidth="100%">
+														<items>
+															<core:Item text="Very High" enabled="true" key="1"/>
+															<core:Item text="High" enabled="true" key="2"/>
+															<core:Item text="Medium" enabled="true" key="3"/>
+															<core:Item text="Low" enabled="true" key="4"/>
+														</items>
+													</ComboBox>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Basic Start Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<!--	<DateTimePicker id="startDate" placeholder="Start Date/Time" width="auto" displayFormat="short" required="false"
+														valueStateText="Invalid entry" editable="false" visible="true" valueFormat="yyyyMMddTHHmmss"/>-->
+													<DatePicker id="startDate" width="auto" enabled="true" displayFormat="dd.MM.yyyy" visible="true" valueFormat="dd-MM-yyyy"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Basic End Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<!--<DateTimePicker id="finishDate" placeholder="End Date/Time" width="auto" displayFormat="short" required="false"
+														valueStateText="Invalid entry" editable="false" visible="true" valueFormat="yyyyMMddTHHmmss"/>-->
+													<DatePicker id="finishDate" width="auto" enabled="true" displayFormat="dd.MM.yyyy" visible="true" valueFormat="dd-MM-yyyy"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:title>
+									<core:Title text="More" level="Auto"/>
+								</form:title>
+								<form:formContainers>
+									<form:FormContainer id="BIND5" visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Order Type" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="orderTypeBind5" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="auto" valueHelpOnly="true"
+														maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+													<!--<ComboBox placeholder="Select Tasklist" id="combo7" editable="true" enabled="true" visible="true" width="auto" valueState="None"
+														maxWidth="100%">
+													<items></items>
+												</ComboBox>-->
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Planning Plant" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="planPlantBind5" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="auto" valueHelpOnly="true"
+														maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="false">
+												<form:label>
+													<Label text="Assign Task List" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="assignTaskBind5" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="auto" valueHelpOnly="true"
+														maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Notification" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="existNotificationBind5" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="auto"
+														valueHelpOnly="true" maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="User Status" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="userstatBind5" value="" type="Text" showValueHelp="false" editable="false" visible="true" valueHelpOnly="false" required="false"
+														valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Person Res." design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="personResBind5" value="" type="Text" showValueHelp="false" editable="false" visible="true" valueHelpOnly="false" required="false"
+														valueStateText="Invalid entry" maxLength="0"/>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+									<form:FormContainer id="WITHOUTBIND5" visible="false">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Order Type" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<Input id="orderType" value="" type="Url" showValueHelp="true" editable="false" visible="true" width="auto" valueHelpOnly="true"
+														maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Planning Plant" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox placeholder="Select Planning plant" id="combo4" change="planPlantChange" editable="true" visible="true" width="auto"
+														valueState="None" maxWidth="100%">
+														<items/>
+													</ComboBox>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="false">
+												<form:label>
+													<Label text="Assign Task List" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox id="assignTask" placeholder="Select Tasklist" editable="true" enabled="true" visible="true" width="auto" valueState="None"
+														maxWidth="100%"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Notification" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox id="existNotification" placeholder="Select existing Notification" editable="true" enabled="true" visible="true" width="auto"
+														valueState="None" maxWidth="100%"/>
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="User Status" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox id="userstat" placeholder="Select User Status" editable="true" enabled="true" visible="true" width="auto" valueState="None"
+														maxWidth="100%"/>
+													<!--<Input id="userstat" value="" type="Text" showValueHelp="false" enabled="true" visible="true" valueHelpOnly="false" required="false"-->
+													<!--	valueStateText="Invalid entry" maxLength="0"/>-->
+												</form:fields>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:label>
+													<Label text="Person Res" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</form:label>
+												<form:fields>
+													<ComboBox id="personRes" placeholder="Select Person responsible" editable="true" enabled="true" visible="true" width="auto"
+														valueState="None" maxWidth="100%" items="{PersonListModel>/results}">
+														<core:ListItem text="{PersonListModel>Pernr}-{PersonListModel>Stext}" key="{PersonListModel>Pernr}-{PersonListModel>Stext}"/>
+													</ComboBox>
+												</form:fields>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Page Section Title" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Sub Section Title" mode="Expanded">
+						<uxap:blocks/>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Operations" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="" mode="Expanded">
+						<uxap:blocks>
+							<form:Form width="100%" editable="true" visible="true">
+								<form:formContainers>
+									<form:FormContainer id="BIND7" visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<Table id="optabBind" noDataText="No Data" mode="None" items="{path:'/listdata', templateShareable:true}" showSeparators="All"
+													growing="true" growingScrollToLoad="true">
+													<infoToolbar>
+														<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+															<content>
+																<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</content>
+														</Toolbar>
+													</infoToolbar>
+													<headerToolbar>
+														<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+															<content>
+																<ToolbarSpacer width=""/>
+																<OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://less" iconFirst="true" width="auto" enabled="true" visible="false"
+																	iconDensityAware="false"/>
+																<!--<OverflowToolbarButton text="Settings" type="Transparent" id="operAdd" press="addRowOperations" icon="sap-icon://add" iconFirst="true"-->
+																<!--	width="auto" enabled="false" visible="false" iconDensityAware="false"/>-->
+															</content>
+														</OverflowToolbar>
+													</headerToolbar>
+													<columns>
+														<Column width="12%" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Operation No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="30%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="15%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Work Center" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Plant" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Control Key" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Duration" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="8%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Spare Part VI" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="5%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header/>
+															<footer/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem>
+															<cells>
+																<Input value="{Operation}" type="Number" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{description}" type="Text" showValueHelp="false" editable="false" visible="true" width="100%" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{WorkCenter}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{Plant}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+																	valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{ControlKey}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{Duration}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<SegmentedButton enabled="true" visible="true">
+																	<items>
+																		<SegmentedButtonItem icon="sap-icon://add-equipment" text="" width="auto" enabled="true" press="_onSegmentedButtonItemPress"/>
+																		<SegmentedButtonItem icon="sap-icon://overview-chart" text="" width="auto" enabled="true" press="_onSegmentedButtonItemPress1"/>
+																	</items>
+																</SegmentedButton>
+																<!--<core:Icon src="sap-icon://navigation-right-arrow" size="20px" height="48px" width="48px" visible="true" press="_onIconPress"/>-->
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+									<form:FormContainer id="WITHOUTBIND7" visible="false">
+										<form:formElements>
+											<form:FormElement id="tableEdit" visible="true">
+												<Table id="optab" noDataText="No Data" mode="None" itemPress="_onRowPress" items="{path:'/arr32', templateShareable:true}"
+													showSeparators="All" growing="true" growingScrollToLoad="true">
+													<infoToolbar>
+														<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+															<content>
+																<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</content>
+														</Toolbar>
+													</infoToolbar>
+													<headerToolbar>
+														<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+															<content>
+																<ToolbarSpacer width=""/>
+																<!--<OverflowToolbarButton text="Settings" type="Emphasized" id="operAddButton" press="addRowOperations" icon="" iconFirst="true"-->
+																<!--	width="auto" enabled="true" visible="true" iconDensityAware="false"/>-->
+																<Button id="operAddButton" text="Add Row" type="Emphasized" press="addRowOperations"/>
+															</content>
+														</OverflowToolbar>
+													</headerToolbar>
+													<columns>
+														<Column width="12%" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Operation No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="25%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="20%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Work Center" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Plant" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Control Key" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Duration" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="4%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" visible="false" demandPopin="true" popinDisplay="Inline"
+															mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="8%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" visible="false" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline"
+															mergeDuplicates="false">
+															<header>
+																<Text text="PersonResponsible" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<!--<Column width="5%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+														<!--	<header/>-->
+														<!--	<footer/>-->
+														<!--</Column>{WorkCenter}-->
+													</columns>
+													<items>
+														<ColumnListItem type="Navigation">
+															<cells>
+																<Input value="{Operation}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{Description}" type="Text" showValueHelp="false"/>
+																<!--<ComboBox id="wkCombo" value="{WorkCenter}" enabled="true" visible="true" width="auto" required="false" valueStateText="Invalid entry"></ComboBox>-->
+																<ComboBox value="{WorkCenter}" id="wkCombo" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%"
+																	items="{PersonListModel>/results}">
+																	<core:Item key="{PersonListModel>Text}" text="{PersonListModel>Text}"/></ComboBox>
+																<Input value="{Plant}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+																	valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{ControlKey}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{Duration}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{DeleteFlag}" type="Text" showValueHelp="false" enabled="true" visible="false" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Button text="" type="Transparent" press="operaDelEdit" icon="sap-icon://delete"/>
+																<!--<SegmentedButton enabled="true" visible="true">-->
+																<!--	<items>-->
+																<!--		<SegmentedButtonItem icon="sap-icon://add-equipment" text="" width="auto" enabled="true" press="_onSegmentedButtonItemPress"/>-->
+																<!--		<SegmentedButtonItem icon="sap-icon://overview-chart" text="" width="auto" enabled="true" press="_onSegmentedButtonItemPress1"/>-->
+																<!--	</items>-->
+																<!--</SegmentedButton>-->
+																<!--<core:Icon src="sap-icon://navigation-right-arrow" size="20px" height="48px" width="48px" visible="true" press="_onIconPress"/>-->
+																<Input value="{Respperson}" type="Text" showValueHelp="false" enabled="true" visible="false" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</form:FormElement>
+											<!--<form:FormElement id="tableAdd" visible="false">-->
+											<!--	<Table id="optabVisible" noDataText="No Data" mode="None" items="{path:'/arr32', templateShareable:true}" showSeparators="All"-->
+											<!--		growing="true" growingScrollToLoad="true" visible="true">-->
+											<!--		<infoToolbar>-->
+											<!--			<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">-->
+											<!--				<content>-->
+											<!--					<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+											<!--				</content>-->
+											<!--			</Toolbar>-->
+											<!--		</infoToolbar>-->
+											<!--		<headerToolbar>-->
+											<!--			<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">-->
+											<!--				<content>-->
+											<!--					<ToolbarSpacer width=""/>-->
+											<!--					<OverflowToolbarButton text="Settings" type="Transparent" id="operAddButton" press="addRowOperations" icon="sap-icon://add" iconFirst="true"-->
+											<!--						width="auto" enabled="false" visible="true" iconDensityAware="false"/>-->
+											<!--				</content>-->
+											<!--			</OverflowToolbar>-->
+											<!--		</headerToolbar>-->
+											<!--		<columns>-->
+											<!--			<Column width="12%" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+											<!--				<header>-->
+											<!--					<Text text="Operation No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+											<!--				</header>-->
+											<!--				<footer/>-->
+											<!--			</Column>-->
+											<!--			<Column width="30%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+											<!--				<header>-->
+											<!--					<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+											<!--				</header>-->
+											<!--				<footer/>-->
+											<!--			</Column>-->
+											<!--			<Column width="15%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+											<!--				<header>-->
+											<!--					<Text text="Work Center" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+											<!--				</header>-->
+											<!--				<footer/>-->
+											<!--			</Column>-->
+											<!--			<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+											<!--				<header>-->
+											<!--					<Text text="Plant" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+											<!--				</header>-->
+											<!--				<footer/>-->
+											<!--			</Column>-->
+											<!--			<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+											<!--				<header>-->
+											<!--					<Text text="Control Key" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+											<!--				</header>-->
+											<!--				<footer/>-->
+											<!--			</Column>-->
+											<!--			<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+											<!--				<header>-->
+											<!--					<Text text="Duration" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+											<!--				</header>-->
+											<!--				<footer/>-->
+											<!--			</Column>-->
+											<!--			<Column width="8%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+											<!--				<header>-->
+											<!--					<Text text="Spare Part VI" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+											<!--				</header>-->
+											<!--				<footer/>-->
+											<!--			</Column>-->
+											<!--			<Column width="5%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+											<!--				<header/>-->
+											<!--				<footer/>-->
+											<!--			</Column>-->
+											<!--		</columns>-->
+											<!--		<items>-->
+											<!--			<ColumnListItem type="Active" press="_onRowPress">-->
+											<!--				<cells>-->
+											<!--					<Input value="{Operation}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false"-->
+											<!--						required="false" valueStateText="Invalid entry" maxLength="0"/>-->
+											<!--					<Input value="{Description}" type="Text" showValueHelp="false"/>-->
+											<!--<ComboBox id="wkCombo" enabled="true" visible="true" width="auto" required="false" valueStateText="Invalid entry"></ComboBox>-->
+											<!--					<ComboBox value="{WorkCenter}" id="wkComboVisible" editable="true" enabled="true" visible="true" width="auto" valueState="None"-->
+											<!--						maxWidth="100%"></ComboBox>-->
+											<!--					<Input value="{Plant}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"-->
+											<!--						valueStateText="Invalid entry" maxLength="0"/>-->
+											<!--					<Input value="{ControlKey}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false"-->
+											<!--						required="false" valueStateText="Invalid entry" maxLength="0"/>-->
+											<!--					<Input value="{Duration}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false"-->
+											<!--						required="false" valueStateText="Invalid entry" maxLength="0"/>-->
+											<!--					<Input value="{DeleteFlag}" type="Text" showValueHelp="false" enabled="true" visible="false" width="auto" valueHelpOnly="false"-->
+											<!--						required="false" valueStateText="Invalid entry" maxLength="0"/>-->
+											<!--					<Button text="" type="Transparent" press="operaDelEdit" icon="sap-icon://delete"></Button>-->
+											<!--				</cells>-->
+											<!--			</ColumnListItem>-->
+											<!--		</items>-->
+											<!--	</Table>-->
+											<!--</form:FormElement>-->
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Componets" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Components" mode="Expanded">
+						<uxap:blocks>
+							<form:Form>
+								<form:formContainers>
+									<form:FormContainer id="BIND8" visible="true">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<Table id="compsTabBIND8" width="100%" items="{path:'/listdata', templateShareable:true}" noDataText="No Data" mode="None"
+													showSeparators="All" growing="true" growingScrollToLoad="true">
+													<infoToolbar>
+														<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+															<content>
+																<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</content>
+														</Toolbar>
+													</infoToolbar>
+													<headerToolbar>
+														<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+															<content>
+																<Title titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+																<ToolbarSpacer width=""/>
+																<OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true"
+																	visible="false" iconDensityAware="false"/>
+																<!--	<OverflowToolbarButton text="Settings" type="Transparent" id="compAddButton1" icon="sap-icon://add" iconFirst="true" width="auto"
+																	enabled="false" visible="false" iconDensityAware="false" press="compo_btn"/>-->
+															</content>
+														</OverflowToolbar>
+													</headerToolbar>
+													<columns>
+														<Column width="13%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Item No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="13%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Operation No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="12%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Material No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="15%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Mat. Desc." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="12%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Stor. Loc." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Item Cat." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="13%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Req Qty" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="13%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="UoM" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="13%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Avail" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<!--	<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>-->
+													</columns>
+													<items>
+														<ColumnListItem type="Active" press="_onRowPress1">
+															<cells>
+																<Input value="{Item}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+																	valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{Operation}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{MaterialNo}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{MatDesc}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{StorageLoc}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{ItemCat}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{ReqQty}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="4"/>
+																<Input value="{uom}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+																	valueStateText="Invalid entry" maxLength="0"/>
+																<Input value="{AvailableQuantity}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+																	required="false" valueStateText="Invalid entry" maxLength="0"/>
+																<Button id="StockButton" text="" press="newmaterial2" icon="sap-icon://create-form" type="Emphasized"
+																	visible="{=${ItemCat} === 'N' ? true:false}" tooltip="Purchase Data"/>
+																<!--<Button text="" type="Transparent" press="operaDelEdit" icon="sap-icon://delete"/>-->
+																<!--<Button icon="sap-icon://delete" press="deleteTab" type="Transparent" visible="true" iconDensityAware="false" width="4rem"/>-->
+																<!--	<Text text="{Operation}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																<Text text="{MatDesc}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																<Text text="{ItemCat}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																<Text text="{ReqQty}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																<Text text="{uom}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																<Text text="{Avail}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+									<form:FormContainer id="WITHOUTBIND8" visible="false">
+										<form:formElements>
+											<form:FormElement visible="true">
+												<Table id="compsTab" width="100%" items="{path:'/arr42', templateShareable:true}" noDataText="No Data" mode="None" showSeparators="All"
+													growing="true" growingScrollToLoad="true">
+													<infoToolbar>
+														<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+															<content>
+																<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</content>
+														</Toolbar>
+													</infoToolbar>
+													<headerToolbar>
+														<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+															<content>
+																<Title titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+																<ToolbarSpacer width=""/>
+																<!--<OverflowToolbarButton text="Settings" type="Transparent" id="compAddButton" icon="" iconFirst="true" width="auto"-->
+																<!--	enabled="false" visible="true" iconDensityAware="false" press="compo_btn"/>-->
+																<Button id="compAddButton" text="Add Row" type="Emphasized" press="compo_btn" enabled="false"/>
+																<OverflowToolbarButton id="compSubButton" text="Filter" type="Transparent" icon="sap-icon://less" iconFirst="true" width="auto"
+																	enabled="true" visible="false" iconDensityAware="false" press="subRowCompo"/>
+															</content>
+														</OverflowToolbar>
+													</headerToolbar>
+													<columns>
+														<Column width="13%" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Item No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="13%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Operation No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="12%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Material No." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="15%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Mat. Desc." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="12%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Stor. Loc." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Item Cat." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="13%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Req Qty" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="13%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="UoM" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="15%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="Avail" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="5%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="false"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="7%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="7%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem type="Active" press="_onRowPress1">
+															<!--	<cells>
+											<Text text="{Operation}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{MatDesc}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{ItemCat}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{ReqQty}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{uom}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{Avail}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</cells>-->
+														</ColumnListItem>
+													</items>
+												</Table>
+											</form:FormElement>
+										</form:formElements>
+										<form:title/>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+								</form:layout>
+							</form:Form>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Technical Object history" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Technical object history" mode="Expanded">
+						<uxap:blocks>
+							<Table id="objHisTable" items="{path:'/listdata', templateShareable:true}" width="100%" noDataText="No Data" mode="None"
+								showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" updateFinished="render">
+								<infoToolbar>
+									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+										<content>
+											<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</content>
+									</Toolbar>
+								</infoToolbar>
+								<headerToolbar>
+									<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+										<content>
+											<!--<Title text="" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>-->
+											<Title id="counttable" text="" titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+											<ToolbarSpacer width=""/>
+											<OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true"
+												visible="false" iconDensityAware="false"/>
+											<OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="false"
+												iconDensityAware="false"/>
+										</content>
+									</OverflowToolbar>
+								</headerToolbar>
+								<columns>
+									<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Notification" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Order No" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="8%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Notif.Date" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="8%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Priority" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="17%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="8%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Funct.Loc" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="12%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Equipment" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem type="Active">
+										<cells>
+											<Text text="{notifNo}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{OrderNo}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{notifDateTech}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<ObjectStatus id="inpPrity" title="" text="{priorityText}" state="{path: 'priorityText', formatter: '.formatter.availableColor'}"
+												visible="true"/>
+											<Text text="{description}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{functionLoc}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{Equipment}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection>
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Attachments" id="two" visible="false">
+						<uxap:blocks>
+							<List id="UploadCollection"  delete="ci_handleDelete" itemPress="downListPress" enableBusyIndicator="true" headerText=""
+								noDataText="Use the 'Upload' Button for upload the documents" growing="true" visible="true"></List>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+					<uxap:ObjectPageSubSection title="Attachments" id="one" visible="true">
+						<uxap:blocks>
+						<List id="UploadCollection1" mode="None" delete="ci_handleDelete" itemPress="downListPress1" enableBusyIndicator="true" headerText=""
+								noDataText="No Data" growing="true" visible="true" busy="{oGlobalModel>/delayInd}" busyIndicatorDelay="0"></List>
+						</uxap:blocks>
+						<uxap:actions>
+							<u:FileUploader buttonText="Upload" visible="false" enabled="true" buttonOnly="true" icon="" name="myFileUpload" value=""
+								placeholder="Upload Attachment" change="_onFileUploaderChange" id="ci_fileUploader1" mode="{oGlobalModel>/modeDelete}"/>
+						</uxap:actions>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<Button text="Create" id="createButton" type="Emphasized" iconFirst="true" width="auto" visible="false" iconDensityAware="false"
+						press="createPress"/>
+					<Button id="releaseButton" text="Release" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="false"
+						iconDensityAware="false" press="onRelPress"/>
+					<Button id="tecoButton" text="TECO" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false"
+						press="onTECOPress"/>
+					<Button id="closeButton" text="CLSD" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="false" iconDensityAware="false"
+						press="onClosePress"/>
+					<!---->
+					<ToolbarSpacer width=""/>
+					<!---->
+					<Button text="Edit" id="editButton" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="editPress"/>
+					<Button text="Save" id="saveButton" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="savePress"/>
+					<Button text="Cancel" id="cancelButton" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true"
+						iconDensityAware="false" press="cancelPress"/>
+				</content>
+			</OverflowToolbar>
+		</uxap:footer>
+	</uxap:ObjectPageLayout>
+</mvc:View>

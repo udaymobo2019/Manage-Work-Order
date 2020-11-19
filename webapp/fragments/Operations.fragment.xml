@@ -1,0 +1,502 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.ba293bd41-us_1.manageWorkOrder.controller.Operations"
+	xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Dialog id="frag1" contentHeight="70%" contentWidth="90%" horizontalScrolling="false" showHeader="true" state="None" stretch="false"
+		title="Component" type="Standard" verticalScrolling="true">
+		<content>
+			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
+				selectedKey="Ok" select="handleIconMainTabBarSelect22">
+				<items>
+					<IconTabFilter icon="sap-icon://documents" iconColor="Default" text="General Data" count="" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false" key="general">
+						<content>
+							<Table id="tab2" items="{/seamtrans}" width="100%" noDataText="No Data" mode="None" delete="deleteTab" showSeparators="All" growing="true"
+								growingThreshold="20" growingScrollToLoad="true">
+								<infoToolbar>
+									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+										<content>
+											<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</content>
+									</Toolbar>
+								</infoToolbar>
+								<headerToolbar>
+									<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+										<content>
+											<Title text="" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+											<ToolbarSpacer width="2%"/>
+											<ToolbarSpacer width=""/>
+											<Button id="firstTime" text="Add Row" type="Emphasized" icon="" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="addbtncp2"/>
+											<Button id="secondTime" text="Add Row" type="Emphasized" icon="" iconFirst="true" width="auto" enabled="true" visible="false"
+												iconDensityAware="false" press="addbtncp"/>
+										</content>
+									</OverflowToolbar>
+								</headerToolbar>
+								<columns>
+									<Column width="8%" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Item" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Operation" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="15%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Material" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="15%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="9%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="UoM" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="8%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Storage Location" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Item Category" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Req Qty" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Available Qty" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="5%" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="5%" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem type="Active">
+										<cells>
+											<!--<Input value="" type="Text" showValueHelp="true" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<!--<Input value="" type="Text" showValueHelp="true" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<!--<Input value="" type="Text" showValueHelp="true" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<!--<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<!--<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<!--<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<!--<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<!--<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<!--<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem type="Active">
+										<cells>
+											<Input id="operaItem" value="{Empty1}" type="Text" showValueHelp="false" editable="false" visible="true" width="auto" valueHelpOnly="false"
+												maxLength="0"/>
+											<ComboBox id="operaCount" editable="true" enabled="true" visible="true" width="100%" valueState="None" change="operaCount"></ComboBox>
+											<!--<Input id="operation" type="Text" showValueHelp="false" enabled="true" visible="true" width="50%" valueHelpOnly="false" maxLength="0"/>-->
+											<!--<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<ComboBox id="matcombo" editable="true" enabled="true" visible="true" width="100%" valueState="None" change="OperaFragMatChange">
+												<!--<items>-->
+												<!--<core:Item text="{pass12}" enabled="true" key="{pass12}"/>-->
+												<!--</items>-->
+											</ComboBox>
+											<Input id="Description" value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false"
+												maxLength="0" change="descrChange"/>
+											<!--<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<ComboBox id="combo17" value="" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%"
+												selectionChange="purdatauom">
+												<items>
+													<!--<core:Item text="Completed" enabled="true" key="complete"/>-->
+													<!--<core:Item text="Not Completed" enabled="true" key="Incomplete"/>-->
+												</items>
+											</ComboBox>
+											<Input id="operaStorLoc" value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" maxLength="4" valueHelpOnly="false"/>
+											<!--<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+											<ComboBox id="combo19" editable="true" enabled="true" visible="true" width="auto" valueState="None"  change="Itemcatchange">
+												<items>
+													<!--<core:Item text="Completed" enabled="true" key="complete"/>-->
+													<!--<core:Item text="Not Completed" enabled="true" key="Incomplete"/>-->
+												</items>
+											</ComboBox>
+											<Input id="operaReqQty" value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false"
+												maxLength="0"/>
+											<Input id="operaAvailQty" value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false"
+												maxLength="0"/>
+											<Button text="" press="newmaterial" icon="sap-icon://create-form" type="Emphasized" visible="false" tooltip="Purchasee Data"/>
+											<Button text="" press="deleteFragTable" icon="sap-icon://delete" type="Emphasized" visible="false"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator icon="" iconDensityAware="false"/>
+					<IconTabFilter id="purdata" icon="sap-icon://form" iconColor="Default" text="Purchase Data" count="" design="Vertical" showAll="false"
+							textDirection="Inherit" enabled="true" visible="false" iconDensityAware="false" key="Purchdata">
+						<VBox class="sapUiSmallMargin">
+							
+							<!--<f:Form id="FormChange480_Trial" editable="true">
+								<f:layout>
+									<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+										emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer title="">
+										<f:formElements>
+											<f:FormElement label=""></f:FormElement>
+											<f:FormElement label="Requirement Qty">
+												<f:fields>
+													<Input id="val0" value=""/>
+													<Input id="val1" value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Price">
+												<f:fields>
+													<Input value=""/>
+													<ComboBox id="combo15" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Material Group">
+												<f:fields>
+													<ComboBox id="combo8" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+													<Input >
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Purchase Group">
+												<f:fields>
+													<ComboBox id="combo9" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+													<Input id="val3" value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Agreement">
+												<f:fields>
+													
+													<ComboBox id="combo12" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items>
+															
+														</items>
+													</ComboBox>
+													<ComboBox id="combo13" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Goods Recipient">
+												<f:fields>
+													<Input value=""/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Requisitioner">
+												<f:fields>
+													<Input value=""/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Pl.Deliv.Time">
+												<f:fields>
+													
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Vend.Mat.No">
+												<f:fields>
+													<Input value=""/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Purchase Req.">
+												<f:fields>
+													<Input value=""/>
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+									<f:FormContainer title="">
+										<f:formElements>
+											<f:FormElement label="Sort String">
+												<f:fields>
+													<Input id="sort" value=""/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="per">
+												<Input id="val4" value=""/>
+												<Input value="">
+													<layoutData>
+														<l:GridData span="XL2 L2 M2 S4"/>
+													</layoutData>
+												</Input>
+											</f:FormElement>
+											<f:FormElement label="G/L Account">
+												<f:fields>
+													<ComboBox id="combo16" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Vendor">
+												<f:fields>
+													<ComboBox id="combo10" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Info Record">
+												<f:fields>
+													
+													<ComboBox id="combo14" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items>
+															
+														</items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Unloading Point">
+												<f:fields>
+													<Input value=""/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Tracking Number">
+												<f:fields>
+													<Input value=""/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="GR Proc.Time">
+												<f:fields>
+													<Input value=""/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Received">
+												<f:fields>
+													<Input value=""/>
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>-->
+							
+							
+							<f:Form id="FormChange480_Trial" editable="true">
+								<f:layout>
+									<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+										emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer title="">
+										<f:formElements>
+											<f:FormElement label=""></f:FormElement>
+											<f:FormElement label="Requirement Qty">
+												<f:fields>
+													<Input id="val0" value="" liveChange="globalqty"/>
+													<Input id="val1" value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Price">
+												<f:fields>
+													<Input id ="Price" value=""/>
+													<ComboBox id="combo15" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Material Group">
+												<f:fields>
+													<ComboBox id="combo8" editable="false" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Purchase Group">
+												<f:fields>
+													<ComboBox id="combo9" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+													<Input id="val3" value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+										
+											<f:FormElement label="Goods Recipient">
+												<f:fields>
+													<Input value="" maxLength="12"/>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Requisitioner">
+												<f:fields>
+													<Input value="" maxLength="12"/>
+												</f:fields>
+											</f:FormElement>
+									
+											<f:FormElement label="Purchase Req.">
+												<f:fields>
+													<Input value=""/>
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+									<f:FormContainer title="">
+										<f:formElements>
+											<f:FormElement label="G/L Account">
+												<f:fields>
+													<ComboBox id="combo16" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="per">
+												<Input id="val4" value=""/>
+												<Input id="perunit" value="">
+													<layoutData>
+														<l:GridData span="XL2 L2 M2 S4"/>
+													</layoutData>
+												</Input>
+											</f:FormElement>
+											
+											<f:FormElement label="Vendor">
+												<f:fields>
+													<ComboBox id="combo10" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items></items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement label="Info Record">
+												<f:fields>
+												
+													<ComboBox id="combo14" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+														<items>
+															
+														</items>
+													</ComboBox>
+												</f:fields>
+											</f:FormElement>
+										
+											<f:FormElement label="Tracking Number">
+												<f:fields>
+													<Input value="" maxLength="12"/>
+												</f:fields>
+											</f:FormElement>
+											
+											<f:FormElement label="Received">
+												<f:fields>
+													<Input value=""/>
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+												</f:fields>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+						</VBox>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="Ok" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="OK"/>
+			<Button text="Cancel" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="Cancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

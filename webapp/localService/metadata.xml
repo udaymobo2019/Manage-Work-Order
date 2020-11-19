@@ -1,0 +1,61 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="63123973a4e622d311e5e9ed" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="63123973a4e622d311e5e9ed_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="MWorderSet" EntityType="63123973a4e622d311e5e9ed.MWorder" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+            </EntityContainer>
+            <EntityType Name="MWorder">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Order" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="Desc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="TechObject" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TechObject"/>
+                <Property Name="MWCenter" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="Status" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName1"/>
+                <Property Name="FunLoc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="Equipment" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName1"/>
+                <Property Name="ShortDesc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName2"/>
+                <Property Name="LongText" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName3"/>
+                <Property Name="PlannerGroup" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName4"/>
+                <Property Name="PMActType" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName5"/>
+                <Property Name="Priority" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName6"/>
+                <Property Name="BasicStrtDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="BasicFnshDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="AssignTaskList" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="AssignTaskList"/>
+                <Property Name="Notification" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Notification"/>
+                <Property Name="UserStatus" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="UserStatus"/>
+                <Property Name="OperationTxt" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OperationTxt"/>
+                <Property Name="WorkCenter" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="WorkCenter"/>
+                <Property Name="PersonalNo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PersonalNo"/>
+                <Property Name="OpNo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OpNo"/>
+                <Property Name="PlanWork" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="PlanWork"/>
+                <Property Name="SparePartVI" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="ItemNo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="Material" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Material"/>
+                <Property Name="ReqQty" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ReqQty"/>
+                <Property Name="Issues" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Issues"/>
+                <Property Name="Avail" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="OHNotification" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="OHOrder" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="OHNotifDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="OHPriority" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OHPriority"/>
+                <Property Name="OHDesc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OHDesc"/>
+                <Property Name="OHFuncLoc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OHFuncLoc"/>
+                <Property Name="OHEquipment" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OHEquipment"/>
+                <Property Name="OHMalfStart" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OHMalfStart"/>
+                <Property Name="OHMalfunEnd" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OHMalfunEnd"/>
+                <Property Name="OHSystem" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="OHStatus" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName"/>
+                <Property Name="AssignPersonel" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="AssignPersonel"/>
+                <Property Name="SetUserStatus" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SetUserStatus"/>
+                <Property Name="MaterialNo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MaterialNo"/>
+                <Property Name="MaterialDesc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MaterialDesc"/>
+                <Property Name="UOM" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="UOM"/>
+                <Property Name="StorageLoc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StorageLoc"/>
+                <Property Name="PriorityColor" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;IF\&quot;,\&quot;name\&quot;:\&quot;if\&quot;,\&quot;type\&quot;:\&quot;condition\&quot;,\&quot;condition\&quot;:[{\&quot;label\&quot;:\&quot;=\&quot;,\&quot;name\&quot;:\&quot;equals\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;MWorder\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;Priority\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;String\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:3,\&quot;computedType\&quot;:\&quot;string\&quot;,\&quot;entityName\&quot;:\&quot;MWorder\&quot;,\&quot;propertyName\&quot;:\&quot;Priority\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;High\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:4,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;displayLabel\&quot;:\&quot;=\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:2,\&quot;computedType\&quot;:\&quot;boolean\&quot;}],\&quot;then\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Error\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:5,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;else\&quot;:[{\&quot;label\&quot;:\&quot;IF\&quot;,\&quot;name\&quot;:\&quot;if\&quot;,\&quot;type\&quot;:\&quot;condition\&quot;,\&quot;condition\&quot;:[{\&quot;label\&quot;:\&quot;=\&quot;,\&quot;name\&quot;:\&quot;equals\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;MWorder\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;Priority\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;String\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:8,\&quot;computedType\&quot;:\&quot;string\&quot;,\&quot;entityName\&quot;:\&quot;MWorder\&quot;,\&quot;propertyName\&quot;:\&quot;Priority\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Medium\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:9,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;displayLabel\&quot;:\&quot;=\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:7,\&quot;computedType\&quot;:\&quot;boolean\&quot;}],\&quot;then\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Warning\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:10,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;else\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Success\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:11,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:6,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;string\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;propertyId&quot;:&quot;Priority&quot;,&quot;entityId&quot;:&quot;MWorder&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;_id&quot;:&quot;5d1b6d1c11e45002174fc679&quot;},{&quot;propertyId&quot;:&quot;Priority&quot;,&quot;entityId&quot;:&quot;MWorder&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;_id&quot;:&quot;5d1b6d1c11e45002174fc678&quot;}]}" sap:label="PriorityColor"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

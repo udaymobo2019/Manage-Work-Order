@@ -1,0 +1,34 @@
+{
+    "application": {
+        "id": "",
+        "title": "com.sap.build.ba293bd41-us_1.manageWorkOrder.ManageWorkOrder_Filter_latest_Grunt",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#ManageWorkOrder_Filter_latest_Grunt-Display",
+        "navigationComponentName": "com.sap.build.ba293bd41-us_1.manageWorkOrder",
+        "intentSemanticObject": "ManageWorkOrder_Filter_latest_Grunt",
+        "intentAction": "Display",
+        "html5ApplicationName": "manageworkorderfilterlatest",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "d78b5abe-f9a1-48b2-b466-e0be7e2ecec1"
+        ],
+        "contentPackages": [
+            "2638efc1-386e-40e1-8751-1f61c39018a9"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Manage Work Order",
+        "subtitle": "",
+        "searchKeywords": "Manage Work Order,",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

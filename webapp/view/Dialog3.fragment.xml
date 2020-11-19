@@ -1,0 +1,54 @@
+<core:FragmentDefinition controllerName="com.sap.build.ba293bd41-us_1.manageWorkOrder.controller.Dialog3" xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ui="sap.ui.table" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:uxap="sap.uxap" xmlns:tnt="sap.tnt"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:ch="sap.suite.ui.microchart" xmlns:rules="sap.rules.ui" xmlns:f="sap.ui.layout.form" xmlns:vm="sap.ui.comp.variants" xmlns:m="sap.m">
+	<Dialog horizontalScrolling="false" showHeader="false" state="None" stretch="false" title="Title" type="Standard" verticalScrolling="true">
+		<content>
+			<Table id="idProductsTable" mode="MultiSelect" noDataText="No Data" inset="false" items="{ path: '/ProductCollection', sorter: { path: 'Name' } }">
+				<headerToolbar>
+					<OverflowToolbar>
+						<content>
+							<Title text="Equipment Master Data" level="H2"/>
+							<ToolbarSpacer/>
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="Spare Part"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Spare Part Description"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+						<Text text="Requirement Qty"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+						<Text text="Unit"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Input value="3227" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+							<Input value="429003-ADAPTER" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false"
+								maxLength="0"/>
+							<Input value="01" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+							<Input value="EA" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="Copy to Component" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

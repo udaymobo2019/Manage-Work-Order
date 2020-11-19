@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.ba293bd41-us_1.manageWorkOrder.controller.Page2_1" xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Dialog id="addcondialog1" class="sapUiSizeCompact" afterClose="dialogAfterclose" title="Information">
+		<content>
+			<CheckBox id="complete" text="Complete Notifications" selected="false" editable="true" visible="true" width="auto" textDirection="RTL"
+				wrapping="true" useEntireWidth="true"/>
+		</content>
+		<buttons>
+			<Button text="Ok" press="tecOk" type="Emphasized"/>
+			<Button text="Cancel" press="tecoCancel" type="Emphasized"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

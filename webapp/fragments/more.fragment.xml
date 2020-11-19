@@ -1,0 +1,236 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.ba293bd41-us_1.manageWorkOrder.controller.more"
+	xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield" xmlns:u="sap.ui.unified">
+	<Dialog horizontalScrolling="true" showHeader="false" state="None" stretch="true" title="Title" type="Standard" verticalScrolling="true">
+		<content>
+			<layout:BlockLayout background="Default" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell width="4" title="" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<form:Form width="100%" editable="true" visible="true">
+										<form:title>
+											<core:Title text="Resource Planning" level="Auto"/>
+										</form:title>
+										<form:formContainers>
+											<form:FormContainer visible="true">
+												<form:formElements>
+													<form:FormElement visible="true">
+														<form:label>
+															<Label text="Assign Personel" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														</form:label>
+														<form:fields>
+															<!--<ComboBox id="personRespMore" placeholder="Select Person responsible" editable="true" enabled="true" visible="true" width="auto"-->
+															<!--	valueState="None" maxWidth="100%" items="{PersonListModel>/results}">-->
+															<!--	<core:ListItem text="{PersonListModel>Pernr}-{PersonListModel>Stext}" key="{PersonListModel>Pernr}"/>-->
+															<!--</ComboBox>-->
+															<Input value="" type="Text" placeholder="Enter Person Responsible" editable="true" visible="true" width="auto" maxLength="0"/>
+															
+															
+															
+														</form:fields>
+													</form:FormElement>
+												</form:formElements>
+											</form:FormContainer>
+											<form:FormContainer visible="true">
+												<form:formElements>
+													<form:FormElement visible="true">
+														<form:label>
+															<Label text="Set User Status" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														</form:label>
+														<form:fields>
+															<Input value="" type="Text" placeholder="Enter User Status" editable="true" visible="true" width="auto" maxLength="0"/>
+														</form:fields>
+													</form:FormElement>
+												</form:formElements>
+												<form:title/>
+											</form:FormContainer>
+										</form:formContainers>
+										<form:layout>
+											<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+										</form:layout>
+									</form:Form>
+									<!--<Table id="tab4" items="{/seamtrans1}" width="100%" noDataText="No Data" mode="None" showSeparators="All" growing="true"-->
+									<!--	growingThreshold="20" growingScrollToLoad="true">-->
+									<!--	<infoToolbar>-->
+									<!--		<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">-->
+									<!--			<content>-->
+									<!--				<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+									<!--			</content>-->
+									<!--		</Toolbar>-->
+									<!--	</infoToolbar>-->
+									<!--	<headerToolbar>-->
+									<!--		<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">-->
+									<!--			<content>-->
+									<!--				<Title text="Resource Planning" titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false" class="sapUiTinyMargin"/>-->
+									<!--				<ToolbarSpacer width=""/>-->
+									<!--				<OverflowToolbarButton text="Settings" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true"-->
+									<!--					visible="false" iconDensityAware="false"/>-->
+									<!--				<OverflowToolbarButton text="Action" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="false"-->
+									<!--					iconDensityAware="false" press="addMoreFrag"/>-->
+									<!--			</content>-->
+									<!--		</OverflowToolbar>-->
+									<!--	</headerToolbar>-->
+									<!--	<columns>-->
+									<!--		<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">-->
+									<!--			<header>-->
+									<!--				<Text text="Assign Personel" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+									<!--			</header>-->
+									<!--			<footer/>-->
+									<!--		</Column>-->
+									<!--		<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+									<!--			<header>-->
+									<!--				<Text text="Set User Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+									<!--			</header>-->
+									<!--			<footer/>-->
+									<!--		</Column>-->
+									<!--	</columns>-->
+									<!--	<items>-->
+									<!--		<ColumnListItem type="Active">-->
+									<!--			<cells>-->
+									<!--<Input type="Text" showValueHelp="true" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+									<!--<ComboBox placeholder="Select PersonResponsible" id="personRespMore" editable="true" enabled="true" visible="true" width="100%"-->
+									<!--	valueState="None" maxWidth="100%"/>-->
+									<!--				<ComboBox id="personRespMore1" placeholder="Select Person responsible" editable="true" enabled="true" visible="true" width="auto"-->
+									<!--					valueState="None" maxWidth="100%" items="{PersonListModel>/results}">-->
+									<!--					<core:ListItem text="{PersonListModel>Pernr}-{PersonListModel>Stext}" key="{PersonListModel>Pernr}"/>-->
+									<!--				</ComboBox>-->
+									<!--				<Input type="Text" showValueHelp="true" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+									<!--			</cells>-->
+									<!--		</ColumnListItem>-->
+									<!--	</items>-->
+									<!--</Table>-->
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout background="Default" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell width="4" title="" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<Table id="tab5" items="{/moretab}" width="100%" noDataText="No Data" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+										growingScrollToLoad="true">
+										<infoToolbar>
+											<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+												<content>
+													<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</content>
+											</Toolbar>
+										</infoToolbar>
+										<headerToolbar>
+											<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+												<content>
+													<Title text="Materials Required" titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false" class="sapUiTinyMargin"/>
+													<ToolbarSpacer width=""/>
+													<OverflowToolbarButton text="Settings" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true"
+														visible="false" iconDensityAware="false"/>
+													<OverflowToolbarButton text="Action" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="false"
+														iconDensityAware="false" press="addbtnmore2"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<columns>
+											<Column width="20%" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Material" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="UOM" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Storage Loc." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="Req.Qty" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem type="Active">
+												<cells>
+													<Input value="{mat}" type="Text" showValueHelp="true" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+													<Input value="{dec}" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+													<Input value="{uom}" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+													<Input value="{Storage}" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+													<Input value="{ReqQty}" type="Text" showValueHelp="true" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>
+													<!--<Input value="{AvailQty}" type="Text" showValueHelp="true" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0"/>-->
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<!--<layout:BlockLayout background="Default" visible="true">-->
+			<!--	<layout:content>-->
+			<!--		<layout:BlockLayoutRow scrollable="false">-->
+			<!--			<layout:content>-->
+			<!--				<layout:BlockLayoutCell title="Attachment" titleAlignment="Begin" titleLevel="Auto">-->
+			<!--					<layout:content>-->
+			<!--						<u:FileUploader buttonText="Upload" visible="true" buttonOnly="true" icon="sap-icon://add" name="myFileUpload" value=""-->
+			<!--							placeholder="Upload Attachment" change="_onFileUploaderChange1" enabled="true" id="ci_fileUploader11"/>-->
+			<!--						<List id="UploadCollection1" mode="Delete" delete="ci_handleDelete" itemPress="downListPress" enableBusyIndicator="true" headerText=""-->
+			<!--							noDataText="Drop files or use the &quot;+&quot; button for upload" growing="true"></List>-->
+			<!--					</layout:content>-->
+			<!--				</layout:BlockLayoutCell>-->
+			<!--			</layout:content>-->
+			<!--		</layout:BlockLayoutRow>-->
+			<!--	</layout:content>-->
+			<!--</layout:BlockLayout>-->
+			<layout:BlockLayout background="Default" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell width="4" title="" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<Title text="Attachment" titleStyle="H5" width="auto" textAlign="Begin" visible="true" wrapping="false" class="sapUiTinyMargin"/>
+									<ToolbarSpacer width=""/>
+									<FlexBox height="90px" alignItems="Start" justifyContent="End">
+										<items>
+											<u:FileUploader buttonText="Upload" visible="true" buttonOnly="true" icon="" name="myFileUpload" value=""
+												placeholder="Upload Attachment" change="_onFileUploaderChange1" id="ci_fileUploader1"/>
+										</items>
+									</FlexBox>
+									<List id="UploadCollection1" mode="Delete" delete="ci_handleDelete1" itemPress="downListPress" enableBusyIndicator="true" headerText=""
+										noDataText="Use the &quot;Upload&quot; button for Upload the Documents in the Main Page" growing="true"></List>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="Ok" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="moreok"/>
+			<Button text="Cancel" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="moreclose"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>
